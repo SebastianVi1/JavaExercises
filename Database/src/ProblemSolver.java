@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ProblemSolver {
     List<Content> contents;
@@ -53,4 +55,15 @@ public class ProblemSolver {
                 .reduce(0.00d, Double::sum);
         System.out.println(podcaster + " Average minutes of content: " + (countContent == 0 ? 0.0 : minutes / countContent));
     }
+
+    public Map<String,Long> countSongOrPodcast(){
+        return contents.stream()
+                .collect(
+                        Collectors.groupingBy(
+                                Content::getType,
+                                Collectors.counting()
+                        )
+                );
+    }
+
 }

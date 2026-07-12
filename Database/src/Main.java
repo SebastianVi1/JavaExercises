@@ -7,5 +7,6 @@ void main() {
     problemSolver.topThreeSongs().forEach(c -> System.out.println(c.toString()));
     problemSolver.podcasterStadistics("Locutor B");
 
+    problemSolver.countSongOrPodcast().forEach((k,v) -> System.out.println(k + " : "+ String.valueOf(v)));
 
 }

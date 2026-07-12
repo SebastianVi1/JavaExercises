@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ProblemSolver {
@@ -64,6 +61,14 @@ public class ProblemSolver {
                                 Collectors.counting()
                         )
                 );
+    }
+
+    public Content getLongestContent() throws Exception {
+        Optional<Content> content =contents.stream().max(Comparator.comparingInt(Content::getDuration));
+        if (content.isEmpty()){
+            throw new Exception("No content in the db");
+        }
+        return content.get();
     }
 
 }

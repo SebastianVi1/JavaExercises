@@ -64,7 +64,12 @@ public class Content {
     }
 
     @Override
-    public String toString(){
-        return "Reproducciones: %d".formatted(this.reproductions);
+    public String toString() {
+        return """
+                Artist: %s,
+                Title: %s,
+                Duration %d seconds,
+                Type: %s
+                """.formatted(this.artist,this.title,this.duration,this.type);
     }
 }

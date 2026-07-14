@@ -1,4 +1,4 @@
-package org.example;
+package org.sebas.rickAndMortyApi;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

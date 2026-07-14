@@ -1,6 +1,7 @@
-package org.example;
+package org.sebas.rickAndMortyApi;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@JsonIgnore
+@JsonIgnoreProperties(ignoreUnknown = true) //ignore if we delete any property
 public class Character {
 
     private int id;
